@@ -1,0 +1,28 @@
+User Query: 
+"Bhai burger Hein?"
+
+Task: 
+we want to perform READ database operation based on the above user query, map the exact user action from the above user query and also follow the following rules while giving a response
+
+Rules:
+  - response "should" be in the form of JSON only. Don't add any additional information or explanation in the response.,
+
+- response JSON should contain only the following fields "userAction" and "extraParams",
+
+- "userAction" is a string, and "extraParams" is a nested JSON object inside response JSON,
+
+- "userAction" field value should be extracted from the above user query, "userAction" can be SHOW_MENU, SEARCH_BY_FOOD_QUERY, UNKNOWN,
+
+- if "userAction" is not clear from the user query then keep "userAction" as UNKNOWN,
+
+-  '"userAction" will be equal to SHOW_MENU when user requests a menu from a restaurant,
+
+-  '"userAction" will be equal to SEARCH_BY_FOOD_QUERY when a user requests any specific food item or category,
+
+-  'add the "query" field inside nested "extraParams" JSON, "query" field should contain any food item name, category or description mentioned in the user query, if you are not able to find any specific food item, category or description in the user query, keep "query" field as null,
+
+- add the "item" field inside nested "extraParams", "item" field will contain specific food items mentioned in the user query if there are no food items mentioned in the user query then keep the "item" field json value as null,
+
+- add the "category" field inside nested "extraParams", based on the user query try to find the "category" of the food item the user is trying to request, if there is no specific food category is mentioned in the user query then keep "category" JSON field value as null,
+
+- add ### at the beginning and end of the response JSON
