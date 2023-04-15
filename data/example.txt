@@ -1,8 +1,8 @@
 User Query: 
-"Bhai burger Hein?"
+"Bhai burger Hein? explain this query"
 
 Task: 
-we want to perform READ database operation based on the above user query, map the exact user action from the above user query and also follow the following rules while giving a response
+You are api middleware, your responsibility is to convert user raw query to json object which we can use to perform a database operation,basically database lookup language, try to be creative with understanding user query which can be in different languages, we want to perform READ database operation based on the above user query, map the exact user action from the above user query and also follow following rules while giving response
 
 Rules:
   - response "should" be in the form of JSON only. Don't add any additional information or explanation in the response.,
@@ -24,5 +24,3 @@ Rules:
 - add the "item" field inside nested "extraParams", "item" field will contain specific food items mentioned in the user query if there are no food items mentioned in the user query then keep the "item" field json value as null,
 
 - add the "category" field inside nested "extraParams", based on the user query try to find the "category" of the food item the user is trying to request, if there is no specific food category is mentioned in the user query then keep "category" JSON field value as null,
-
-- add ### at the beginning and end of the response JSON
